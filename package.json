@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/thekauej/paroquia/"
     },
     "engines": {
-        "node": "5.9.1"
+        "node": "8.11.2"
     },
     "main": "server.js",
     "scripts": {
