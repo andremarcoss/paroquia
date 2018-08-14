@@ -46,3 +46,23 @@ exports.getUmTestemunho = function(req, res, next){
     })
 }
 
+exports.deleteTestemunho = function(req, res, next){
+    const _idTestemunho = req.params.id_testemunho;
+
+    Testemunho.findById(_idTestemunho, function(err){
+        if(err)
+            return res.status(500).send({
+                message: 'Erro ao adquirir Testemunho',
+                erro: err
+            })
+        
+        Testemunho.remove({_id: _idTestemunho}, function(err){
+            if(err)
+                return res.status(500).send({
+                    message: 'Erro ao adquirir Testemunho',
+                    erro: err
+                })
+            return res.status(200).send({message: 'Testemunho excluído com sucesso'})
+        })    
+    })
+}
