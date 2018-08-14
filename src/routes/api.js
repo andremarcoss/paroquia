@@ -14,7 +14,8 @@ module.exports = function(app){
     app.use('/testemunho',
         testemunhoRoute.post('/', TestemunhoController.registrarTestemunho),
         testemunhoRoute.get('/', TestemunhoController.getTodosTestemunhos),
-        testemunhoRoute.get('/:id_testemunho', TestemunhoController.getUmTestemunho)
+        testemunhoRoute.get('/:id_testemunho', TestemunhoController.getUmTestemunho),
+        testemunhoRoute.delete('/:id_testemunho', TestemunhoController.deleteTestemunho)
     );
 
     app.use('/aviso',
